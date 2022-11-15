@@ -46,17 +46,17 @@
             </li>
           </ul>
         </nav>
-
+        <!-- Header contact -->
         <ul class="contact">
           <li class="contact-list">
-            <a href="mailto:info@devstudio.com" class="link"
+            <a class="contact-link" href="mailto:info@devstudio.com"
               ><svg class="contact-icon" width="16" height="12">
                 <use href="./images/icons.svg#icon-envelope"></use></svg
               >info@devstudio.com</a
             >
           </li>
           <li class="contact-list">
-            <a href="tel:+380961111111" class="link">
+            <a class="contact-link" href="tel:+380961111111">
               <svg class="contact-icon" width="10" height="16">
                 <use href="./images/icons.svg#icon-smartphone"></use></svg
               >+38 096 111 11 11</a
@@ -71,7 +71,7 @@
       <section class="hero">
         <div class="hero-box container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="btn">Замовити послугу</button>
+          <button type="button" class="btn" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <!-- Features -->
@@ -130,12 +130,14 @@
       <section class="work">
         <div class="work-section container">
           <h2 class="section-title">Чим ми займаємося</h2>
-          <ul class="work-list list">
+          <ul class="work-list">
             <li class="work-item">
               <img src="./images/index/img1.jpeg" alt="Розробка сайтів" width="370" />
+              <p class="work-desc">Десктопні додатки</p>
             </li>
             <li class="work-item">
               <img src="./images/index/img2.jpeg" alt="Розробка мобільних додатків" width="370" />
+              <p class="work-desc">Мобільні додатки</p>
             </li>
             <li class="work-item">
               <img
@@ -143,6 +145,7 @@
                 alt="Створення дизайну вашого сайту"
                 width="370"
               />
+              <p class="work-desc">Дизайнерські рішення</p>
             </li>
           </ul>
         </div>
@@ -513,5 +516,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal window -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" type="button" data-modal-close>
+          <svg class="modal-close-icon" width="18" height="18">
+            <use href="./images/icons.svg#icon-btn-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js "></script>
   </body>
 </html>
