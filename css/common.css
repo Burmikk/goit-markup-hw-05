@@ -126,7 +126,7 @@ body {
   position: relative;
 
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 33px;
   color: var(--primary-text-color);
 
   transition: color 250ms var(--animation-timing-function);

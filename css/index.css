@@ -230,18 +230,21 @@
   color: var(--prmary-icon-color);
   background-color: #ffffff;
 
-  transition: color 250ms var(--animation-timing-function),
-    background-color 250ms var(--animation-timing-function);
+  transition: background-color 250ms var(--animation-timing-function);
 }
 
 .team-icon-link:hover,
 .team-icon-link:focus {
-  color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
 
 .team-icon {
-  fill: currentColor;
+  fill: var(--prmary-icon-color);
+  transition: fill 250ms var(--animation-timing-function);
+}
+.team-icon-link:hover > .team-icon,
+.team-icon-link:focus > .team.icon {
+  fill: var(--primary-white-color);
 }
 
 /* Clients */
@@ -276,20 +279,25 @@
   border: 1px solid var(--prmary-icon-color);
   border-radius: 4px;
 
-  transition: color 250ms var(--animation-timing-function),
-    border-color 250ms var(--animation-timing-function);
+  transition: border-color 250ms var(--animation-timing-function);
 }
 
 .clients-icon-link:hover,
 .clients-icon-link:focus {
-  color: var(--accent-color);
   border-color: var(--accent-color);
 }
 .clients-icon {
-  fill: currentColor;
-
-  /* Backdrop */
+  fill: var(--prmary-icon-color);
+  transition: fill 250ms var(--animation-timing-function);
 }
+
+.clients-icon-link:hover > .clients-icon,
+.clients-icon-link:focus > .clients-icon {
+  fill: var(--accent-color);
+}
+
+/* Backdrop */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -298,14 +306,12 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: transform 2s var(--animation-timing-function),
-    scale 2s var(--animation-timing-function), opacity 2s var(--animation-timing-function);
+  visibility: visible;
+  transition: opacity 250ms var(--animation-timing-function),
+    visibility 250ms var(--animation-timing-function);
 }
 
 .backdrop.is-hidden {
-  transform: translate(0, 100%);
-
-  scale: 0.1;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -315,15 +321,21 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 528px;
   min-height: 581px;
+  transition: transform 500ms var(--animation-timing-function);
 
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.3);
+}
+
 .modal-btn {
   position: absolute;
   top: 8px;
